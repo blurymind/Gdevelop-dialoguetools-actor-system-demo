@@ -2267,7 +2267,7 @@
                   "parameters": [
                     "textScrollSpd",
                     "=",
-                    "0.01"
+                    "0.002"
                   ]
                 }
               ]
@@ -2312,7 +2312,7 @@
                   "parameters": [
                     "textScrollSpd",
                     "=",
-                    "0.03"
+                    "0.005"
                   ]
                 }
               ]
@@ -2989,6 +2989,18 @@
           "actions": [],
           "events": [
             {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "s left: I am standing on the left side // will detect if left parameter is passed and if so set the avatar on that side. We need to also unset it from the other avatar on the other side, but lets leave that out of this demo"
+            },
+            {
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -3075,18 +3087,27 @@
               "comment": "s shocked: blah blah // will detect that the second parameter has the actor's face and accordingly update their face info"
             },
             {
-              "disabled": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
                   "type": {
-                    "value": "AnimatableCapability::AnimatableBehavior::Name"
+                    "value": "VarObjetTxt"
                   },
                   "parameters": [
                     "av_emote",
-                    "Animation",
-                    "contains",
-                    "DialogueTree::ActiveActorId() +\"_\"+DialogueTree::ActiveLineActorParameter(1)"
+                    "actor",
+                    "=",
+                    "DialogueTree::ActiveActorId()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareStrings"
+                  },
+                  "parameters": [
+                    "DialogueTree::ActiveLineActorParameter(0)",
+                    "!=",
+                    "\"\""
                   ]
                 }
               ],
@@ -3098,7 +3119,7 @@
                   "parameters": [
                     "DialogueTree::ActiveActorId()",
                     "\"face\"",
-                    "DialogueTree::ActiveLineActorParameter(1)"
+                    "DialogueTree::ActiveLineActorParameter(0)"
                   ]
                 }
               ]
