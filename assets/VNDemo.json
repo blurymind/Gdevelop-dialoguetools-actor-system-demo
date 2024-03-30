@@ -1,0 +1,32 @@
+[
+	{
+		"title": "Start",
+		"tags": "bg:room left:s early",
+		"body": "// dont show any actor avatars, we just set them up in tags left:s, however no active actor is speaking\nIt was a quiet morning when knocks were heard\n// since active actor m is not assigned to left nor right, they are treated as off screen\nm: Hey, are you ready? We are going to be late (offscreen)\n// now show active actor s avatar on the left (as set in tags)\ns angry: Zzzzz, L-late.. Go away!\nm smile: Seriously, you need to get ready. The bus will be here\n// now since its not an active actor dont show any avatars\nSutemo begrudgingly got up and looked out of the window.(r is gone)\nThere was a bus outside\ns shocked: C-crap!\ns angry: Ok wait a second!\n// here his avatar wont be visible because we set right to =\"\"\nm laugh: I told ya!\nA few minutes later sutemo was ready...\n// here we can use this command to change the bg or music\n// here his avatar comes on the right, as we used the \"right\" word. This assigns him to the right avatar\nm right: Are you ok?\nm laugh: I felt like you freaked out earlier..\ns smile left: I feel much better now!\nm: Your mood does tend to improve after breakfast.\ns angry: Shut up, baka!\nm: ...\ns: what?\nm: You watch too much anime...\ns: nuh-uh.. anyways the class is about to start.\nm: shall we go in?\n[[ yes lets go to school |Going_in_school]] [[ Lets take a walk first |Going_to_street]]",
+		"position": {
+			"x": 439,
+			"y": 381
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Going_in_school",
+		"tags": "bg:school etr",
+		"body": "The school looked unusually empty today\n<<if $a.s.isWorried>>\ns: Oh we are in trouble now!\nm: Calm down, we will just go to the next class\n<<endif>>\nThe two walked into class",
+		"position": {
+			"x": 430,
+			"y": 62
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Going_to_street",
+		"tags": "bg:street",
+		"body": "The two decided to skip the first class\ns shocked: This doesnt feel right\nm smile: It's fine dont worry about it\ns shocked: but what if we get expelled?\nm laugh\" What, for this? Don't be ridiculous.\ns: I want to start over!\n<<set $a.s.isWorried=true>> \nWanna start over?\n[[ Yes, restart the day |Start]][[ No, lets go to school|Going_in_school]]",
+		"position": {
+			"x": 769,
+			"y": 181
+		},
+		"colorID": 0
+	}
+]
