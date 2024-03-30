@@ -2434,15 +2434,6 @@
               "actions": [
                 {
                   "type": {
-                    "value": "Montre"
-                  },
-                  "parameters": [
-                    "questionChoicesText",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
                     "value": "ModVarScene"
                   },
                   "parameters": [
@@ -2744,73 +2735,6 @@
                       ]
                     }
                   ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "DialogueTree::IsCommandCalled"
-                  },
-                  "parameters": [
-                    "\"saveGame\""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "DialogueTree::SaveState"
-                  },
-                  "parameters": [
-                    "yarnState"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "DialogueTree::IsCommandCalled"
-                  },
-                  "parameters": [
-                    "\"loadGame\""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "DialogueTree::LoadState"
-                  },
-                  "parameters": [
-                    "yarnState"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "DialogueTree::IsCommandCalled"
-                  },
-                  "parameters": [
-                    "\"clearGame\""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "DialogueTree::ClearState"
-                  },
-                  "parameters": []
                 }
               ]
             }
