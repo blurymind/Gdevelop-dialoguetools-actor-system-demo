@@ -2069,6 +2069,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Dialogue scrolling",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -2843,13 +2844,10 @@
               "conditions": [
                 {
                   "type": {
-                    "value": "BuiltinCommonInstructions::CompareNumbers"
+                    "inverted": true,
+                    "value": "DialogueTree::LineHasActiveActor"
                   },
-                  "parameters": [
-                    "StrLength(DialogueTree::ActiveActorId())",
-                    "=",
-                    "0"
-                  ]
+                  "parameters": []
                 }
               ],
               "actions": [
@@ -2869,13 +2867,9 @@
               "conditions": [
                 {
                   "type": {
-                    "value": "BuiltinCommonInstructions::CompareNumbers"
+                    "value": "DialogueTree::LineHasActiveActor"
                   },
-                  "parameters": [
-                    "StrLength(DialogueTree::ActiveActorId())",
-                    ">",
-                    "0"
-                  ]
+                  "parameters": []
                 }
               ],
               "actions": [
